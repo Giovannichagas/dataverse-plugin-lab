@@ -1,0 +1,20 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# Arquivos do usuário
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Pacotes
+packages/
+
+# ReSharper
+_ReSharper*/
+
+# Rider
+.idea/
