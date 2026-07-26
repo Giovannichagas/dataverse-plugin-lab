@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataversePluginLab.Plugins
 {
-    public class Class1
+    public class PluginBase
     {
     }
 }

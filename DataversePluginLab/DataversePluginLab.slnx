@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="DataversePluginLab.Plugins/DataversePluginLab.Plugins.csproj" />
+  <Project Path="DataversePluginLab.Shared/DataversePluginLab.Shared.csproj" />
+  <Project Path="DataversePluginLab.Tests/DataversePluginLab.Tests.csproj" />
 </Solution>
