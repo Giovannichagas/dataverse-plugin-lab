@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="DataversePluginLab.Plugins/DataversePluginLab.Plugins.csproj" />
-  <Project Path="DataversePluginLab.Shared/DataversePluginLab.Shared.csproj" />
-  <Project Path="DataversePluginLab.Tests/DataversePluginLab.Tests.csproj" />
+  <Project Path="DataversePluginLab.Plugins/DataversePluginLab.Plugins.csproj" Id="ee5968f5-8b62-4541-a44f-08cfadbf2d76" />
+  <Project Path="DataversePluginLab.Shared/DataversePluginLab.Shared.csproj" Id="ef5ce6c8-6464-4479-aeb6-68834b856c84" />
+  <Project Path="DataversePluginLab.Tests/DataversePluginLab.Tests.csproj" Id="a867cb32-b570-478c-a0c1-b8c71bc5731b" />
 </Solution>
