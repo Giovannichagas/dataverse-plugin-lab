@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contact\ValidarTelefone.cs" />
+    <Compile Include="Opportunity\CriarTarefaAoCriarOportunidade.cs" />
     <Compile Include="PluginBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,7 +104,6 @@
     <Folder Include="Account\" />
     <Folder Include="Common\" />
     <Folder Include="Lead\" />
-    <Folder Include="Opportunity\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
