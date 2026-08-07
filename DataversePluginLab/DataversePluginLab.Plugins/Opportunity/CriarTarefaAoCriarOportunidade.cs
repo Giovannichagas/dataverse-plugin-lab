@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xrm.Sdk;
 using System;
+
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,19 +25,20 @@ namespace DataversePluginLab.Plugins.Opportunity
                 return;
             }
 
-            string nomeOportuidade = ObterNomeOportunidade(oportunidade);
-            {
-                if (string.IsNullOrWhiteSpace(nomeOportuidade))
+            string nomeOportunidade = ObterNomeOportunidade(oportunidade);
+            
+                if (string.IsNullOrWhiteSpace(nomeOportunidade))
                 {
-                    nomeOportuidade = "Sem nome";
+                    nomeOportunidade = "Sem nome";
                 }
-            }
+            
 
             TracingService.Trace("Criando tarefa");
 
             Entity tarefa = new Entity("task");
 
-            tarefa["subject"] = "Entrar em contato com o cliente - " + nomeOportuidade;
+            tarefa["subject"] = "Entrar em contato com o cliente - " + nomeOportunidade;
+
             tarefa["scheduledend"] = DateTime.UtcNow.AddDays(2);
             tarefa["prioritycode"] = new OptionSetValue(2);
 
@@ -53,10 +56,11 @@ namespace DataversePluginLab.Plugins.Opportunity
             {
                 return null;
             }
-
+            
             return target;
         }
 
+      
         private string ObterNomeOportunidade(Entity target)
         {
             return target.GetAttributeValue<string>("gbc_name");
