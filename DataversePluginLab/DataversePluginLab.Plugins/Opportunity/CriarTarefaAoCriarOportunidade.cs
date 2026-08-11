@@ -25,6 +25,15 @@ namespace DataversePluginLab.Plugins.Opportunity
                 return;
             }
 
+            if (!Context.PostEntityImages.Contains("PostImage"))
+            {
+                TracingService.Trace("PostImage não encontrada");
+                return;
+            }
+            Entity postImage = Context.PostEntityImages["PostImage"];
+
+            DateTime dataCriacao  = postImage.GetAttributeValue<DateTime>("createdon");
+
             string nomeOportunidade = ObterNomeOportunidade(oportunidade);
             
                 if (string.IsNullOrWhiteSpace(nomeOportunidade))
@@ -38,6 +47,8 @@ namespace DataversePluginLab.Plugins.Opportunity
             Entity tarefa = new Entity("task");
 
             tarefa["subject"] = "Entrar em contato com o cliente - " + nomeOportunidade;
+
+            tarefa["description"] = "Oportunidade criada em: " + dataCriacao.ToString("dd/MM/yyyy HH:mm");
 
             tarefa["scheduledend"] = DateTime.UtcNow.AddDays(2);
             tarefa["prioritycode"] = new OptionSetValue(2);

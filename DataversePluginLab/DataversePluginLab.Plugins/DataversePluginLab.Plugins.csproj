@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="Contact\ValidarTelefone.cs" />
     <Compile Include="Opportunity\CriarTarefaAoCriarOportunidade.cs" />
+    <Compile Include="Opportunity\ValidarAlteracaoNomeOportunidade.cs" />
     <Compile Include="PluginBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
