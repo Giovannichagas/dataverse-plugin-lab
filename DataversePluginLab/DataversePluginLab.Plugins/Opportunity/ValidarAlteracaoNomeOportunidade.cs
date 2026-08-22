@@ -19,6 +19,11 @@ namespace DataversePluginLab.Plugins.Opportunity
             }
             string nomeOportunidade = target.GetAttributeValue<string>("gbc_name");
 
+            if(string.IsNullOrWhiteSpace(nomeOportunidade))
+            {
+                throw new InvalidPluginExecutionException("O nome da oportunidade não pode ser nulo ou vazio.");
+            }
+
             if (!Context.PreEntityImages.Contains("PreImage"))
             {
                 return;
@@ -30,6 +35,14 @@ namespace DataversePluginLab.Plugins.Opportunity
             if(nomeAnterior != nomeOportunidade)
             {
                 TracingService.Trace("Nome da oportunidade alterado de '{0}' para '{1}' ", nomeAnterior, nomeOportunidade);
+
+                Entity anotacao = new Entity("annotation");
+                anotacao["subject"] = "Alteração do nome da oportunidade";
+                anotacao["notetext"] = $"O nome da oportunidade foi alterado de '{nomeAnterior}' para '{nomeOportunidade}'.";
+                anotacao["objectid"] = target.ToEntityReference();
+                Service.Create(anotacao);
+                
+
             }
 
         }
